@@ -35,7 +35,7 @@ const listener = app.listen(process.env.PORT || 3000, () => {
 app.get('/api/users', async (req, res) => {
   const users = await User.find({}).select("_id username")
   if (!users) {
-    res, send("No user")
+    res.send("No user")
   } else {
     res.json(users)
   }
